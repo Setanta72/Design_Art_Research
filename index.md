@@ -4,5 +4,5 @@
 * List of jobs
 * Topics
 * Resources
-
 Thanks to [Bill's Video] (https://www.youtube.com/watch?v=gzxSnyLoSgY&list=PLWzwUIYZpnJuT0sH4BN56P5oWTdHJiTNq&index=4)
+[Bills Vid] (https://www.youtube.com/watch?v=gzxSnyLoSgY&list=PLWzwUIYZpnJuT0sH4BN56P5oWTdHJiTNq&index=4)
