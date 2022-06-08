@@ -1,4 +1,674 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-05T23:35:50+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2022/06/05/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-06-05T22:58:17+01:00</published><updated>2022-06-05T22:58:17+01:00</updated><id>http://localhost:4000/jekyll/update/2022/06/05/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/06/05/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-08T18:03:12+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Open Product Visualisation</title><link href="http://localhost:4000/jekyll/update/2022/06/07/Open-Product-Vis-KO.html" rel="alternate" type="text/html" title="Open Product Visualisation" /><published>2022-06-07T13:15:00+01:00</published><updated>2022-06-07T13:15:00+01:00</updated><id>http://localhost:4000/jekyll/update/2022/06/07/Open-Product-Vis-KO</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/06/07/Open-Product-Vis-KO.html"><![CDATA[<h1 id="in-the-beginning">In the beginning</h1>
+<p>This post represents the start of a serious attempt to engage with a project I have been kicking about for some time which is the capture of my work to date in the area of open product visualisation and more broadly the use of open source tools in the field of product design and product visualisation.</p>
+
+<h2 id="early-engagements-with-open-source-software">Early engagements with open source software</h2>
+<p>I have been engaged with open source software in the production of research and design outputs since my PhD research wherein I used open source tools running on SUSE Linux to do the vast majority of my work in materials analsysis and the production of the thesis itself. In particular I used Perl to automate the analysis of XRD and image analysis outputs. The code used for that element will be linked here.</p>
+
+<h2 id="observations-from-industry">Observations from industry</h2>
+<p>Working in design and engineering across a range of company sizes a couple of observations have emerged. These need to be supported by subsequent research but these initial personal observations. Propritery software dominates the sector and industry standards once established are hard to break away from and industry expectation feeds back into education and training programmes. Proprietary software has tended towards aggressive update cycles (with no backwards compatibility) or software as a service. There is also an increasingly effective implementation of per seat licencing which makes the burden of cost of this software significant. With a strong need for security, support and tracking of industry standards open source alternatives (which can be superior) are often overlooked. This is compounded by many open source software products having very “distinct” UIs and a reportedly steep learning curve.</p>
+
+<p>This learning curve is actually one of the issues I want to engage with in the research. Many of the software operations in product visualisation require a strong knowledge of the product features with many accessed by keyboard shortcuts by a proficient user. Be it open of proprietary many of these packages demand a high level of user proficiency to be effective as the tasks being undertaken are frequently complex and the software products are feature rich. Much of the supposed “ease of use” of the established products mearly comes from familiarity and their market dominance allow them to set the norm.</p>
+
+<h1 id="more-than-a-hobby">More than a hobby</h1>
+<p>My re-engagement with open source software on more than a hobby  basis really came from 2 sources.</p>
+
+<ol>
+  <li>Python</li>
+  <li>Blender</li>
+</ol>
+
+<p>Python as I was looking for something to do maths and control external devices. Solve simultaneous equations and control heaters with little or no budget. Raspberry Pi and Python (Sympy stack) fit the bill perfectly.</p>
+
+<p>3D modelling without access to a Solidworks licence lead me first to Fusion 360 (Autodesk) but also to Blender. I learned Blender on version 2.79 but the real interest took off with the release of 2.8 beta with the significant enhancements to UI and functionality.</p>
+
+<p>The move to an academic role allowed me to explore further the possibilities open source software presented particularly in the area of industrial design where some traditional approaches are being displaced by software tools which have market dominance in related fields but may not be offering the best workflow for industrial design.</p>
+
+<p>Studying a masters in teaching and learning also allowed me opportunity to reflect on the role of education in training experts ready for industry vs educating designers to establish an underlying understanding of , for example, form generation such that they are able to rapidly become effective at using any tool to achieve their desired outcome.</p>
+
+<hr />
+<h1 id="open-source-product-visualisation">Open Source Product Visualisation</h1>
+
+<ul>
+  <li>
+    <p>Introduction and Premis</p>
+
+    <ul>
+      <li>
+        <p>Product Visualisation</p>
+
+        <ul>
+          <li>
+            <p>Product/Design Vis</p>
+
+            <ul>
+              <li>
+                <p>Product Visualisation</p>
+              </li>
+              <li>
+                <p>Design Visualisation</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>What is it?</p>
+          </li>
+          <li>
+            <p>How is used</p>
+
+            <ul>
+              <li>
+                <p>Historically</p>
+              </li>
+              <li>
+                <p>Currently</p>
+
+                <ul>
+                  <li>
+                    <p>Communication</p>
+                  </li>
+                  <li>
+                    <p>Iteration</p>
+                  </li>
+                  <li>
+                    <p>Promotion</p>
+                  </li>
+                  <li>
+                    <p>Evalavuation</p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Types of visualisation</p>
+
+            <ul>
+              <li>
+                <p>Sketch level</p>
+
+                <ul>
+                  <li>
+                    <p>2D</p>
+                  </li>
+                  <li>
+                    <p>3D</p>
+                  </li>
+                  <li>
+                    <p>Form</p>
+                  </li>
+                  <li>
+                    <p>Propose</p>
+                  </li>
+                  <li>
+                    <p>Examples</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Blockout</p>
+
+                <ul>
+                  <li>
+                    <p>2D</p>
+                  </li>
+                  <li>
+                    <p>3D</p>
+                  </li>
+                  <li>
+                    <p>Form</p>
+                  </li>
+                  <li>
+                    <p>Propose</p>
+                  </li>
+                  <li>
+                    <p>Examples</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Rapid ideation</p>
+
+                <ul>
+                  <li>
+                    <p>2D</p>
+                  </li>
+                  <li>
+                    <p>3D</p>
+                  </li>
+                  <li>
+                    <p>Form</p>
+                  </li>
+                  <li>
+                    <p>Propose</p>
+                  </li>
+                  <li>
+                    <p>Examples</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Concept refinement</p>
+
+                <ul>
+                  <li>
+                    <p>2D</p>
+                  </li>
+                  <li>
+                    <p>3D</p>
+                  </li>
+                  <li>
+                    <p>Form</p>
+                  </li>
+                  <li>
+                    <p>Propose</p>
+                  </li>
+                  <li>
+                    <p>Examples</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Design proposal</p>
+
+                <ul>
+                  <li>
+                    <p>2D</p>
+                  </li>
+                  <li>
+                    <p>3D</p>
+                  </li>
+                  <li>
+                    <p>Form</p>
+                  </li>
+                  <li>
+                    <p>Propose</p>
+                  </li>
+                  <li>
+                    <p>Examples</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Design Refinement</p>
+
+                <ul>
+                  <li>
+                    <p>2D</p>
+                  </li>
+                  <li>
+                    <p>3D</p>
+                  </li>
+                  <li>
+                    <p>Form</p>
+                  </li>
+                  <li>
+                    <p>Propose</p>
+                  </li>
+                  <li>
+                    <p>Examples</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Design Presentation</p>
+
+                <ul>
+                  <li>
+                    <p>2D</p>
+                  </li>
+                  <li>
+                    <p>3D</p>
+                  </li>
+                  <li>
+                    <p>Form</p>
+                  </li>
+                  <li>
+                    <p>Propose</p>
+                  </li>
+                  <li>
+                    <p>Examples</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Product promotion visualisations</p>
+
+                <ul>
+                  <li>
+                    <p>2D</p>
+                  </li>
+                  <li>
+                    <p>3D</p>
+                  </li>
+                  <li>
+                    <p>Form</p>
+                  </li>
+                  <li>
+                    <p>Propose</p>
+                  </li>
+                  <li>
+                    <p>Examples</p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Value</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Current techniques</p>
+
+        <ul>
+          <li>
+            <p>Growing dependance on software to mediate the design process</p>
+          </li>
+          <li>
+            <p>Broad range of software solutions</p>
+          </li>
+          <li>
+            <p>Rapidly changing landscape</p>
+          </li>
+          <li>
+            <p>Dominance in some areas of design by a small number of large companies</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Open Source Tools</p>
+
+        <ul>
+          <li>
+            <p>Open source movement</p>
+          </li>
+          <li>
+            <p>Development of open source tools</p>
+          </li>
+          <li>
+            <p>Value proposition of open vs closed source software</p>
+          </li>
+          <li>
+            <p>Open vs closed in a commercial context</p>
+
+            <ul>
+              <li>
+                <p>Effiency</p>
+              </li>
+              <li>
+                <p>Quality</p>
+              </li>
+              <li>
+                <p>Support</p>
+              </li>
+              <li>
+                <p>Compatibility</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Open vs closed source in education</p>
+
+            <ul>
+              <li>
+                <p>Freedom</p>
+              </li>
+              <li>
+                <p>Stability</p>
+              </li>
+              <li>
+                <p>Software maturity</p>
+              </li>
+              <li>
+                <p>Continuity</p>
+
+                <ul>
+                  <li>
+                    <p>Price changes</p>
+                  </li>
+                  <li>
+                    <p>Withdrawal of packages</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Support</p>
+              </li>
+              <li>
+                <p>Education vs Training</p>
+              </li>
+              <li>
+                <p>Access</p>
+              </li>
+              <li>
+                <p>Industry acceptance</p>
+              </li>
+              <li>
+                <p>Underlying principles vs application specific training</p>
+              </li>
+              <li>
+                <p>Exposure to multiple packages vs specific training in a small number</p>
+
+                <ul>
+                  <li>
+                    <p>Cost implications</p>
+                  </li>
+                  <li>
+                    <p>Breadth vs depth</p>
+                  </li>
+                  <li>
+                    <p>Cognitive load</p>
+                  </li>
+                  <li>
+                    <p>Learning curve vs learning to learn</p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Broad overall scope</p>
+
+        <ul>
+          <li>
+            <p>Narrows up to focus on 3D visualisation</p>
+          </li>
+          <li>
+            <p>As a case study</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Review Literature</p>
+
+    <ul>
+      <li>
+        <p>Visualisation in the design process</p>
+
+        <ul>
+          <li>
+            <p>Visualisation as a design method</p>
+          </li>
+          <li>
+            <p>Visualisation as a communication method</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>History of product/design visualisation</p>
+
+        <ul>
+          <li>
+            <p>Traditional visualisation techniques</p>
+          </li>
+          <li>
+            <p>The evolution of the role of software in product visualisation</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Current state of product and design visualisation</p>
+
+        <ul>
+          <li>
+            <p>Simulation and complex data visualisation</p>
+
+            <ul>
+              <li>
+                <p>Beyond the scope of the current review</p>
+              </li>
+              <li>
+                <p>Digital twins</p>
+              </li>
+              <li>
+                <p>Component simulation and artificial colours</p>
+              </li>
+              <li>
+                <p>Full system simulation</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>2D visualisation and simulation</p>
+          </li>
+          <li>
+            <p>3D visualisation and simulation</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>2D graphical</p>
+
+        <ul>
+          <li>
+            <p>Usage</p>
+          </li>
+          <li>
+            <p>Technology</p>
+          </li>
+          <li>
+            <p>Product Landscape</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>3D Modeling</p>
+
+        <ul>
+          <li>
+            <p>Usage</p>
+          </li>
+          <li>
+            <p>Technology</p>
+
+            <ul>
+              <li>
+                <p>breps</p>
+              </li>
+              <li>
+                <p>nurbs</p>
+              </li>
+              <li>
+                <p>parasolid</p>
+              </li>
+              <li>
+                <p>SubD</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Product Landscape</p>
+
+            <ul>
+              <li>
+                <p>General solutions</p>
+              </li>
+              <li>
+                <p>Industry specific solutions</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>3D Modeling in product design and product visualisation</p>
+
+        <ul>
+          <li>
+            <p>Traditional</p>
+          </li>
+          <li>
+            <p>Software options</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Value and cost</p>
+
+        <ul>
+          <li>
+            <p>Estimating the value in increased productivity</p>
+          </li>
+          <li>
+            <p>Estimating value in increased creativity</p>
+          </li>
+          <li>
+            <p>Estimating value in increased customer impact</p>
+          </li>
+          <li>
+            <p>Estimating value in increased product sales</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Open Source</p>
+
+        <ul>
+          <li>
+            <p>Origins</p>
+          </li>
+          <li>
+            <p>Development</p>
+          </li>
+          <li>
+            <p>Open source in the main stream</p>
+          </li>
+          <li>
+            <p>Open source projects in the area of design visualisation</p>
+
+            <ul>
+              <li>
+                <p>Impact</p>
+              </li>
+              <li>
+                <p>Usage</p>
+              </li>
+              <li>
+                <p>Critical review</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Open source in commercial setting</p>
+          </li>
+          <li>
+            <p>Open source in education setting</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Subtopic 9</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Establish Methodology and Method</p>
+  </li>
+  <li>
+    <p>Establish position and prior learning</p>
+  </li>
+  <li>
+    <p>Identify case study</p>
+
+    <ul>
+      <li>
+        <p>Identify scope of outputs</p>
+
+        <ul>
+          <li>
+            <p>a. Visual Presentation</p>
+          </li>
+          <li>
+            <p>b. 3D print</p>
+          </li>
+          <li>
+            <p>c. Technical design detailing</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Identification of design outputs and output types</p>
+      </li>
+      <li>
+        <p>Identify scope of timescales and expectations of detail</p>
+      </li>
+      <li>
+        <p>Selection of software tools aligned with each output type</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Apply design method</p>
+
+    <ul>
+      <li>
+        <p>Comparator Design</p>
+
+        <ul>
+          <li>Comparator design using “Standard”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Compile observations and comparator analysis</p>
+  </li>
+  <li>
+    <p>Open outputs to external critique</p>
+  </li>
+  <li>
+    <p>Analysis of critique vs observations</p>
+  </li>
+  <li>
+    <p>Generate Syllabus Proposal Based on Outcomes</p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[In the beginning This post represents the start of a serious attempt to engage with a project I have been kicking about for some time which is the capture of my work to date in the area of open product visualisation and more broadly the use of open source tools in the field of product design and product visualisation.]]></summary></entry><entry><title type="html">Jekyll and Bundle Setup</title><link href="http://localhost:4000/jekyll/update/2022/06/07/4th.html" rel="alternate" type="text/html" title="Jekyll and Bundle Setup" /><published>2022-06-07T00:32:17+01:00</published><updated>2022-06-07T00:32:17+01:00</updated><id>http://localhost:4000/jekyll/update/2022/06/07/4th</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/06/07/4th.html"><![CDATA[<h1 id="random-post-now">Random post now</h1>
+<hr />
+<p>Fumbling about in the dark a bit with Ruby and Gems but here is what I needed to do to get jekyll serving locally</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle init
+bundle add jekyll --version "~&gt;4.2"
+gem install colorator --version 1.1.0
+gem install liquid  --version 4.0.3
+gem install forwardable-extended --version 2.6.0
+gem install jekyll-watch --version 2.2.1
+bundle config set --local path 'vendor/bundle'
+bundle install
+bundle add webrick
+bundle install
+bundle updat
+bundle exec jekyll serve --livereload
+bundle add jekyll-feed
+bundle install
+bundle updat
+bundle update
+bundle exec jekyll serve --livereload
+bundle exec jekyll new --force --skip-bundle .
+bundle exec jekyll serve --livereload
+bundle add webrick
+bundle exec jekyll serve --livereload
+</code></pre></div></div>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Random post now Fumbling about in the dark a bit with Ruby and Gems but here is what I needed to do to get jekyll serving locally]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2022/06/07/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-06-07T00:27:57+01:00</published><updated>2022-06-07T00:27:57+01:00</updated><id>http://localhost:4000/jekyll/update/2022/06/07/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/06/07/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>Jekyll requires blog post files to be named according to the following format:</p>
+
+<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+
+<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2022/06/05/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-06-05T22:58:17+01:00</published><updated>2022-06-05T22:58:17+01:00</updated><id>http://localhost:4000/jekyll/update/2022/06/05/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/06/05/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>To add new posts, simply add a file in the <code class="language-plaintext highlighter-rouge">_posts</code> directory that follows the convention <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
@@ -10,6 +680,4 @@
 <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
 <span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">4th</title><link href="http://localhost:4000/2022/06/05/4th.html" rel="alternate" type="text/html" title="4th" /><published>2022-06-05T00:00:00+01:00</published><updated>2022-06-05T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/05/4th</id><content type="html" xml:base="http://localhost:4000/2022/06/05/4th.html"><![CDATA[<h1 id="random-post-now">Random post now</h1>
-<hr />
-<p>This is my 4the attempt at a blog post</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Random post now This is my 4the attempt at a blog post]]></summary></entry></feed>
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry></feed>
