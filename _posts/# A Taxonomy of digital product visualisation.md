@@ -1,4 +1,4 @@
-# # A Taxonomy of digital product visualisation
+# A Taxonomy of digital product visualisation
 ## An outline for a lecture series
 In building out my skills over the last five years in product visualization both traditional and digital I have arrived at the number of observations with regard to digital product visualization. In setting out to create electro series focusing on digital product realization I thought it would be useful to lay out a taxonomy of digital product visualization as I see it.
 
