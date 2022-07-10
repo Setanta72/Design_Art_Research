@@ -1,0 +1,35 @@
+---
+layout: post
+title:  "Cleaning House"
+date:   2022-07-10 15:23:00 +0100
+categories: jekyll update
+---
+# New broom
+In kicking off any significant project a bit of groundwork is always necessary
+an to that end I undertook a tidy up of my drive spaces and tried to put things in terms of projects such that they were findable and reusable. This FAIR principle is in every data management plan of every research project. What I found in practice was that my drives were in a mess and what was originally scoped as an afternoon job turned into 3 days of frustrating work (and its not done yet)
+
+# Lessons learned
+## Change happens when it is complete
+Half finishing a job like this is a disaster as there is a huge amount of sunk cost in terms of work and things tend to get worse before they get better. Schedule in more time at the end of projects or in review activity to sort out design outputs and data.
+
+## Build project data structures
+* At the outset of each project or work package set out a structure for data storage. This data storage plan should also be recorded.
+* Resolve conflicts. Where a file could appear in two places consider using shortcut to point at file location
+
+## Have a work in progress
+* Split out the WIP folder for active work in progress projects. If there are too many in there at any one time then I'm spread to thin and nothing will get finished (which is one of my typical behaviours)
+
+## Clearly demark between learning and outputs
+
+* Define outcomes in advance
+** Define learning outcomes or design outcomes in advance project start
+* Allocate estimate and record time
+
+## Use metadata
+* Learn to apply metadata
+** Use metadata tags
+
+## Create assets repository to maximise re-use
+* I have generated a lot of materials, backgrounds, lighting studios that should be re-used across multiple projects. These should be leveraged to be as available as possible to multiple software applications and projects
+
+#Tags #structure #data #metadata
