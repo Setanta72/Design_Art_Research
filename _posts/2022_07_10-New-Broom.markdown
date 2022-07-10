@@ -27,7 +27,7 @@ Half finishing a job like this is a disaster as there is a huge amount of sunk c
 
 ## Use metadata
 * Learn to apply metadata
-*Use metadata tags
+** Use metadata tags
 
 ## Create assets repository to maximise re-use
 * I have generated a lot of materials, backgrounds, lighting studios that should be re-used across multiple projects. These should be leveraged to be as available as possible to multiple software applications and projects
