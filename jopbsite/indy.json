@@ -1,0 +1,10 @@
+[
+  { "industry": "Technology", "value": 100 },
+  { "industry": "Healthcare", "value": 25 },
+  { "industry": "Finance", "value": 30 },
+  { "industry": "Manufacturing", "value": 50 },
+  { "industry": "Energy", "value": 40 },
+  { "industry": "Construction", "value": 30 },
+  { "industry": "Retail", "value": 20 },
+  { "industry": "Transportation", "value": 50 }
+]

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashstyles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>Job Seeker Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Job Seeker Dashboard</h1>
+    </header>
+    <main>
+        <section id="industry-trends">
+         <h2>Industry Trends and High-Demand Sectors</h2>
+         <svg id="bar-chart" width="960" height="600"></svg>
+        <p class="chart-description">
+           The bar chart above illustrates the current industry trends and high-demand sectors in the job market. Each bar represents an industry, and the height of the bar indicates the number of job openings or growth in that particular industry. By examining this chart, job seekers like Dave can identify which industries are experiencing significant growth and make informed decisions about which sectors to target during their job search. The data presented here is regularly updated to provide an accurate snapshot of the dynamic job market landscape.
+         </p>
+        </section>
+
+        <section id="in-demand-skills">
+            <h2>In-Demand Skills</h2>
+            <svg id="treemap" width="960" height="600"></svg>
+        </section>
+        <section id="regional-data">
+            <h2>Regional and Local Job Market Data</h2>
+            <!-- Insert the geographic heatmap or choropleth map here -->
+        </section>
+        <section id="salary-trends">
+            <h2>Salary Benchmarks and Compensation Trends</h2>
+            <!-- Insert the line chart or box-and-whisker plot here -->
+        </section>
+        <section id="personalized-job-recommendations">
+            <h2>Personalized Job Recommendations</h2>
+            <!-- Insert the job recommendation dashboard here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Job Seeker Dashboard</p>
+    </footer>
+
+    <script>
+  // Sample data
+  const data = {
+    "name": "Skills",
+    "children": [
+      { "name": "JavaScript", "value": 100 },
+      { "name": "Python", "value": 80 },
+      { "name": "Java", "value": 60 },
+      { "name": "C#", "value": 50 },
+      { "name": "PHP", "value": 40 },
+      { "name": "C++", "value": 30 },
+      { "name": "Ruby", "value": 20 },
+      { "name": "Swift", "value": 10 }
+    ]
+  };
+
+  // Set dimensions and create the treemap layout
+  const width = 960;
+  const height = 600;
+  const treemapLayout = d3.treemap().size([width, height]).padding(1);
+
+  // Create a hierarchy from the data
+  const root = d3.hierarchy(data).sum(d => d.value);
+  treemapLayout(root);
+
+  // Select the SVG element and create groups for each data node
+  const svg = d3.select("#treemap");
+  const cell = svg.selectAll("g")
+    .data(root.leaves())
+    .join("g")
+    .attr("transform", d => `translate(${d.x0},${d.y0})`);
+
+  // Append a rectangle for each node and set the color, size, and border
+  cell.append("rect")
+    .attr("width", d => d.x1 - d.x0)
+    .attr("height", d => d.y1 - d.y0)
+    .attr("fill", d => d3.interpolateRainbow(Math.random()))
+    .attr("stroke", "#fff");
+
+  // Add the skill name as text to each rectangle
+  cell.append("text")
+    .attr("x", 5)
+    .attr("y", 15)
+    .text(d => d.data.name)
+    .attr("font-size", "12px")
+    .attr("fill", "#fff");
+
+d3.json('indy.json').then(industryData => {
+  industryData.forEach(d => {
+    d.value = +d.value;
+  });
+  createBarChart(industryData);
+});
+
+function createBarChart(industryData) {
+  // Set dimensions, margins, and scales
+  const barChartWidth = 960;
+  const barChartHeight = 600;
+  const margin = { top: 20, right: 20, bottom: 100, left: 100 };
+
+  const xScale = d3.scaleBand()
+    .domain(industryData.map(d => d.industry))
+    .range([margin.left, barChartWidth - margin.right])
+    .padding(0.1);
+
+  const yScale = d3.scaleLinear()
+    .domain([0, d3.max(industryData, d => d.value)])
+    .range([barChartHeight - margin.bottom, margin.top]);
+
+  // Select the SVG element for the bar chart and create groups for each data point
+  const barChartSvg = d3.select("#bar-chart");
+  const barGroups = barChartSvg.selectAll("g")
+    .data(industryData)
+    .join("g")
+    .attr("transform", d => `translate(${xScale(d.industry)},${yScale(d.value)})`);
+
+  // Append a rectangle for each industry and set the color, size, and border
+  barGroups.append("rect")
+    .attr("width", xScale.bandwidth())
+    .attr("height", d => barChartHeight - margin.bottom - yScale(d.value))
+    .attr("fill", d => d3.interpolateRainbow(Math.random()))
+    .attr("stroke", "#fff");
+
+  // Add the industry name as text to each rectangle
+  barGroups.append("text")
+    .attr("x", xScale.bandwidth() / 2)
+    .attr("y", -5)
+    .text(d => d.industry)
+    .attr("font-size", "12px")
+    .attr("text-anchor", "middle")
+    .attr("fill", "#000");
+
+  // Add x-axis and y-axis
+  barChartSvg.append("g")
+    .attr("transform", `translate(0,${barChartHeight - margin.bottom})`)
+    .call(d3.axisBottom(xScale));
+
+  barChartSvg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(yScale));
+}
+
+
+</script>
+
+       
