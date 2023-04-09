@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+svg {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.link {
+  fill: none;
+  stroke: #657786;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font-size: 12px;
+}
+
+.node circle {
+  fill: #1da1f2;
+  stroke: #1da1f2;
+  stroke-width: 2px;
+}
+
+.node text {
+  fill: #657786;
+}
+
+.node text.anchor-start {
+  text-anchor: start;
+}
+
+.node text.anchor-end {
+  text-anchor: end;
+}
+
+  </style>
+</head>
+<body>
+
+<script>
+// Your data in a CSV format.
+const csvData = `tag,numfiles
+understanding,9
+collaboration,8
+funding,8
+infrastructure,7
+knowledge,7
+communication,5
+crosscampus,5
+sharing,5
+time,5
+common_goal,4
+connections,4
+ethics,4
+metaphors,4
+process,4
+resources,4
+admin,3
+discovery,3
+impact,3
+navigation,3
+organisational,3
+strength,3
+visualisation,3
+capacity,2
+complexity,2
+cross-school,2
+integrity,2
+limitation,2
+methods,2
+motivation,2
+network,2
+ownership,2
+physical,2
+problemsolving,2
+relationships,2
+silo,2
+theory,2
+working,2
+workload,2
+action,1
+borders,1
+careers,1
+difference,1
+enablers,1
+engagement,1
+equipment,1
+expansive,1
+exposing,1
+external,1
+groups,1
+honest,1
+identity,1
+initiatives,1
+intersection,1
+learning,1
+methodology,1
+nonacademic,1
+note,1
+note/source,1
+open,1
+opportunities,1
+people,1
+PhD,1
+practice,1
+problemarea,1
+professions,1
+projects,1
+publication,1
+reflective,1
+responsible,1
+review,1
+specialisation,1
+suitability,1
+teaching,1
+technique,1
+values,1
+workshop,1`;
+
+// Parse the CSV data into a usable format.
+const data = d3.csvParse(csvData);
+
+// Create a root node and add the tags as children.
+const rootNode = {
+  name: "Tags",
+  children: data.map(d => ({ name: d.tag, value: +d.numfiles })),
+};
+
+// Define the dimensions of the chart.
+const width = 800;
+const height = 800;
+
+// Create a d3 treemap layout.
+const treemapLayout = d3.treemap()
+  .size([width, height])
+  .padding(1);
+
+// Create a d3 hierarchy from the root node.
+const root = d3.hierarchy(rootNode)
+  .sum(d => d.value);
+
+// Compute the treemap layout.
+treemapLayout(root);
+
+// Create an SVG element to draw the chart.
+const svg = d3.select("body")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height)
+  .style("font-family", "sans-serif");
+
+  // Function to generate a random color.
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// Add cells (rectangles) for each tag.
+const cells = svg.selectAll(".cell")
+  .data(root.leaves())
+  .enter()
+  .append("g")
+  .attr("class", "cell")
+  .attr("transform", d => `translate(${d.x0},${d.y0})`);
+
+cells.append("rect")
+  .attr("width", d => d.x1 - d.x0)
+  .attr("height", d => d.y1 - d.y0)
+  .attr("fill", () => getRandomColor());
+
+// Add labels for each tag.
+cells.append("text")
+  .attr("x", 4)
+  .attr("y", 14)
+  .text(d => d.data.name)
+  .attr("fill", "white")
+  .attr("font-size", "12px")
+  .attr("pointer-events", "none");
+</script>
+</body>
+</html>
