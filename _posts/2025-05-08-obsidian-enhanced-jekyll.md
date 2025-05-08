@@ -1,11 +1,16 @@
 ---
 layout: post
-title: "Obsidian Enhanced Jekyll"
-date: 2025-05-08 21:16:13 +0100+0100 # Generates date, time, and timezone offset (e.g., +01:00)
-categories: [blog,process]
-tags: [AI, blog, obsidian]
-author: "Brian P. Casey" # Or your preferred author name
-published: true # Set to false to keep it as a draft
+title: Obsidian Jekyll Template
+date: 2025-05-08 21:16:13 +0100+0100
+categories:
+  - blog
+  - process
+tags:
+  - AI
+  - blog
+  - obsidian
+author: Brian P. Casey
+published: true
 ---
 
 ## Obsidian Jekyll Template
