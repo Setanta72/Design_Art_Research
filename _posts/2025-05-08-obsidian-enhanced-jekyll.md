@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Untitled 1"
+title: "Obsidian Enhanced Jekyll"
 date: 2025-05-08 21:16:13 +0100+0100 # Generates date, time, and timezone offset (e.g., +01:00)
 categories: [blog,process]
 tags: [AI, blog, obsidian]
