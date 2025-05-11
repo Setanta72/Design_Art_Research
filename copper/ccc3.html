@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copper Coast Ceramics - Handcrafted Pottery from Tramore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <style type="text/tailwindcss">
+        body {
+            font-family: 'Open Sans', sans-serif;
+            /* Primary Background from style tile (Light Beige/Off-white) */
+            background-color: #FDFBF5; 
+            /* Primary Text Color from style tile (Dark Slate Gray) */
+            color: #586464; 
+            line-height: 1.7;
+        }
+
+        .font-lora-heading {
+            font-family: 'Lora', serif;
+        }
+
+        .section-title {
+            font-family: 'Lora', serif;
+            font-size: 2.8em; /* Slightly larger for impact */
+            /* Primary Text Color from style tile */
+            color: #586464; 
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center; /* Centered titles for a more modern feel */
+            margin-bottom: 40px; /* Increased spacing */
+        }
+        
+        section .container p, section .container div > p {
+            text-align: left;
+            font-size: 1.15em; /* Slightly larger body text */
+            /* Primary Text Color from style tile */
+            color: #586464; 
+            margin-bottom: 20px; /* Increased spacing */
+            max-width: 750px; /* Consistent max-width for readability */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Centering paragraph text within sections that have centered titles */
+        .section-text-center p {
+            text-align: center;
+        }
+        
+        .nav-link-custom {
+            text-decoration: none;
+            /* Primary Accent Color from style tile (Desaturated Cyan/Blue-Gray) */
+            color: #7C9393; 
+            font-weight: 600; /* Slightly bolder */
+            font-family: 'Lora', serif;
+            font-size: 1.1em; /* Adjusted size */
+            /* Tailwind classes for padding, rounding, hover effect */
+            @apply px-4 py-2 rounded-md hover:text-[#9EB0B0] transition-colors duration-300; 
+        }
+        
+        .btn-primary-custom {
+            /* Primary Accent Color from style tile */
+            background-color: #7C9393; 
+            color: #FFFFFF;
+            padding: 14px 28px; /* Larger padding */
+            border: none;
+            border-radius: 6px; /* Slightly more rounded */
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .btn-primary-custom:hover {
+            /* Secondary Accent Color from style tile (Lighter Desaturated Cyan/Blue-Gray) */
+            background-color: #9EB0B0; 
+            transform: translateY(-2px); /* Subtle lift effect */
+        }
+
+        .form-input-custom {
+            width: 100%; 
+            padding: 12px;
+            margin-bottom: 20px;
+            /* Subtle Border Color */
+            border: 1px solid #D1D5DB; 
+            border-radius: 6px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1em;
+            background-color: #FFFFFF;
+            /* Text color for input fields */
+            color: #586464; 
+        }
+        .form-input-custom:focus {
+            /* Border color on focus - using Primary Accent */
+            border-color: #7C9393; 
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(124, 147, 147, 0.3); /* Subtle focus ring */
+        }
+
+        .form-label-custom {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            /* Primary Text Color */
+            color: #586464; 
+            font-family: 'Lora', serif;
+            text-align: left;
+        }
+        #contact form {
+             max-width: 650px; /* Slightly wider form */
+             margin: 40px auto 0 auto; /* Centered form */
+             text-align: left;
+             /* Lighter background for the form card itself */
+             background-color: #F0F2EF; 
+             padding: 40px; /* More padding */
+             border-radius: 12px; /* More rounded corners */
+             box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* Softer shadow */
+        }
+
+        /* Lightbox Modal Styles */
+        .lightbox-modal {
+            @apply fixed inset-0 bg-black/85 z-[100] p-4; /* Darker overlay */
+            display: none; 
+        }
+        .lightbox-modal.is-open {
+            @apply flex items-center justify-center;
+        }
+        .lightbox-content {
+            /* Background for lightbox content */
+            @apply bg-white p-5 rounded-lg shadow-2xl relative max-w-4xl max-h-[90vh] overflow-auto; 
+        }
+        .lightbox-image {
+            @apply max-w-full max-h-[80vh] block mx-auto rounded-md; /* Rounded image */
+        }
+        .lightbox-close {
+            /* Close button styled with Accent Color */
+            @apply absolute top-4 right-4 text-white bg-[#7C9393] hover:bg-[#9EB0B0] rounded-full p-2 w-10 h-10 flex items-center justify-center text-2xl font-bold transition-colors leading-none;
+        }
+
+        .gallery-item-custom {
+            /* Card background for gallery items */
+            background-color: #FFFFFF; 
+            /* Subtle border */
+            border: 1px solid #E0E0E0; 
+            border-radius: 10px; /* More rounded */
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07); /* Softer shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .gallery-item-custom:hover {
+            transform: translateY(-8px); /* More pronounced lift */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Enhanced shadow on hover */
+        }
+        .gallery-item-custom img {
+            width: 100%;
+            height: auto; /* Allow height to adjust based on aspect ratio */
+            display: block;
+            aspect-ratio: 16 / 9; /* Landscape aspect ratio */
+            object-fit: cover; /* Cover will fill the area, cropping if necessary */
+            cursor: pointer;
+        }
+        .gallery-item-custom .caption {
+            padding: 18px 15px; /* More padding */
+            font-size: 1em;
+            /* Caption text color - using Primary Accent */
+            color: #7C9393; 
+            font-style: italic;
+            font-family: 'Lora', serif;
+            background-color: #F8F9FA; /* Light background for caption area */
+        }
+
+        /* Hero Section Specific Styling */
+        #hero {
+            /* Updated to Hero1.png and ensured path is correct */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Hero1.png'); 
+            background-size: cover;
+            background-position: center center; 
+            background-repeat: no-repeat;
+            color: #FFFFFF; 
+        }
+        #hero .section-title, #hero p {
+            color: #FFFFFF; 
+        }
+         #hero .container {
+            min-height: 80vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+         #hero .btn-primary-custom { 
+            background-color: #FDFBF5; 
+            color: #586464; 
+            border: 2px solid #7C9393;
+        }
+        #hero .btn-primary-custom:hover {
+            background-color: #E9EAE5;
+            color: #586464;
+        }
+
+        /* Section background color alternation for visual separation */
+        section:nth-of-type(even) {
+            background-color: #E9EAE5;
+        }
+        #hero { /* Ensure hero keeps its specific background */
+             background-color: transparent !important; 
+        }
+
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="bg-[#FDFBF5]/90 backdrop-blur-lg shadow-md sticky top-0 z-50 border-b-2 border-[#9EB0B0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24"> 
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center space-x-3">
+                        <img class="h-20 w-auto sm:h-24" src="CopperLogoTxt.png" alt="Copper Coast Ceramics Logo" onerror="this.src='https://placehold.co/180x70/586464/FDFBF5?text=Copper+Coast+Ceramics'; this.onerror=null;">
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-2">
+                        <a href="#about" class="nav-link-custom">About</a>
+                        <a href="#gallery" class="nav-link-custom">Gallery</a>
+                        <a href="#contact" class="nav-link-custom">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-[#7C9393] hover:text-[#9EB0B0] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#9EB0B0]" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg id="menu-icon-open" class="h-7 w-7 block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg id="menu-icon-close" class="h-7 w-7 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-[#FDFBF5]/95">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block nav-link-custom mobile-nav-link-item text-base text-center py-3">About</a>
+                <a href="#gallery" class="block nav-link-custom mobile-nav-link-item text-base text-center py-3">Gallery</a>
+                <a href="#contact" class="block nav-link-custom mobile-nav-link-item text-base text-center py-3">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative text-white">
+        <div class="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <h1 class="section-title text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Copper Coast Ceramics</h1>
+            <p class="text-xl md:text-2xl mb-10 leading-relaxed">Handcrafted pottery inspired by the raw beauty of Ireland's Copper Coast.</p>
+            <div class="mt-8">
+                 <a href="#gallery" class="btn-primary-custom inline-block text-lg">Explore Our Creations</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 md:py-28">
+        <div class="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">About Us</h2>
+            <div class="section-text-center">
+                <p>Welcome to Copper Coast Ceramics, where clay meets the captivating spirit of the Irish coastline. Our studio, nestled near the scenic town of Tramore in County Waterford, draws endless inspiration from the rugged cliffs, shifting seas, and rich mineral hues of the Copper Coast, a UNESCO Global Geopark.</p>
+                <p>Each piece is thoughtfully handcrafted, blending traditional pottery techniques with a contemporary aesthetic. We strive to create ceramics that are not only beautiful and functional but also tell a story of their origin – a tribute to the natural artistry that surrounds us. From our hands to your home, we hope our work brings a touch of Ireland's unique coastal magic into your life.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 md:py-28">
+        <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">Our Gallery</h2>
+            <div class="section-text-center">
+                <p class="mb-16">Discover a selection of our unique ceramic pieces. Each item is lovingly shaped, glazed, and fired in our Tramore studio. Click any image to view it in more detail.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div class="gallery-item-custom">
+                    <img src="CC1.jpg" alt="Ceramic Creation 1" onerror="this.src='https://placehold.co/640x360/E9EAE5/586464?text=CC1&fontsize=20'; this.onerror=null;">
+                    <div class="caption">Coastal Mug</div>
+                </div>
+                <div class="gallery-item-custom">
+                    <img src="CC2.jpg" alt="Ceramic Creation 2" onerror="this.src='https://placehold.co/640x360/E9EAE5/586464?text=CC2&fontsize=20'; this.onerror=null;">
+                    <div class="caption">Oceanic Bowl</div>
+                </div>
+                <div class="gallery-item-custom">
+                    <img src="CC3.jpg" alt="Ceramic Creation 3" onerror="this.src='https://placehold.co/640x360/E9EAE5/586464?text=CC3&fontsize=20'; this.onerror=null;">
+                    <div class="caption">Cliffside Vase</div>
+                </div>
+                <div class="gallery-item-custom">
+                    <img src="CC4.jpg" alt="Ceramic Creation 4" onerror="this.src='https://placehold.co/640x360/E9EAE5/586464?text=CC4&fontsize=20'; this.onerror=null;">
+                    <div class="caption">Seafoam Platter</div>
+                </div>
+                <div class="gallery-item-custom">
+                    <img src="CC5.jpg" alt="Ceramic Creation 5" onerror="this.src='https://placehold.co/640x360/E9EAE5/586464?text=CC5&fontsize=20'; this.onerror=null;">
+                    <div class="caption">Mineral Glaze Pot</div>
+                </div>
+                <div class="gallery-item-custom">
+                    <img src="CC6.jpg" alt="Ceramic Creation 6" onerror="this.src='https://placehold.co/640x360/E9EAE5/586464?text=CC6&fontsize=20'; this.onerror=null;">
+                    <div class="caption">Shoreline Collection</div>
+                </div>
+                <div class="gallery-item-custom">
+                    <img src="CC7.jpg" alt="Ceramic Creation 7" onerror="this.src='https://placehold.co/640x360/E9EAE5/586464?text=CC7&fontsize=20'; this.onerror=null;">
+                    <div class="caption">Rustic Jug</div>
+                </div>
+                <div class="gallery-item-custom">
+                    <img src="CC8.jpg" alt="Ceramic Creation 8" onerror="this.src='https://placehold.co/640x360/E9EAE5/586464?text=CC8&fontsize=20'; this.onerror=null;">
+                    <div class="caption">Earthy Tones Set</div>
+                </div>
+                 <div class="gallery-item-custom">
+                    <img src="CC9.jpg" alt="Ceramic Creation 9" onerror="this.src='https://placehold.co/640x360/E9EAE5/586464?text=CC9&fontsize=20'; this.onerror=null;">
+                    <div class="caption">Hand-thrown Planter</div>
+                </div>
+                <div class="gallery-item-custom">
+                    <img src="CC10.jpg" alt="Ceramic Creation 10" onerror="this.src='https://placehold.co/640x360/E9EAE5/586464?text=CC10&fontsize=20'; this.onerror=null;">
+                    <div class="caption">Artisan Serving Dish</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-28">
+        <div class="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="section-text-center">
+                <p class="mb-12">We'd love to hear from you! Whether you're interested in purchasing a piece, commissioning a custom order, or simply want to know more about our work, please don't hesitate to reach out.</p>
+            </div>
+            
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> 
+                <div>
+                    <label for="name" class="form-label-custom">Full Name:</label>
+                    <input type="text" name="name" id="name" required class="form-input-custom" placeholder="e.g., Jane Doe">
+                </div>
+                <div>
+                    <label for="email" class="form-label-custom">Email Address:</label>
+                    <input type="email" name="email" id="email" required class="form-input-custom" placeholder="e.g., jane.doe@example.com">
+                </div>
+                <div>
+                    <label for="subject" class="form-label-custom">Subject:</label>
+                    <input type="text" name="subject" id="subject" class="form-input-custom" placeholder="e.g., Enquiry about Oceanic Bowl">
+                </div>
+                <div>
+                    <label for="message" class="form-label-custom">Your Message:</label>
+                    <textarea name="message" id="message" rows="6" required class="form-input-custom" placeholder="Tell us about your query..."></textarea>
+                </div>
+                <div class="text-center mt-6"> 
+                    <button type="submit" class="btn-primary-custom">Send Message</button>
+                </div>
+            </form>
+            <div class="mt-16 text-center">
+                <p class="font-lora-heading text-xl mb-3">Visit or Contact Us Directly:</p>
+                <p class="text-lg"><strong>Copper Coast Ceramics</strong><br>
+                Studio near Tramore, Co. Waterford, Ireland<br>
+                Email: <a href="mailto:info@coppercoastceramics.ie" class="text-[#7C9393] hover:text-[#9EB0B0] transition-colors">info@coppercoastceramics.ie</a><br>
+                Phone: <a href="tel:+3538X1234567" class="text-[#7C9393] hover:text-[#9EB0B0] transition-colors">+353 8X 123 4567</a> (By Appointment)</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#586464] text-[#FDFBF5] py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <img src="CopperLogoTxt.png" alt="Copper Coast Ceramics Logo" class="h-28 w-auto mx-auto mb-6 opacity-90" onerror="this.src='https://placehold.co/200x80/FDFBF5/586464?text=Logo'; this.onerror=null;">
+            <p class="font-lora-heading text-xl mb-2">Copper Coast Ceramics</p>
+            <p class="text-md text-[#FDFBF5]/80 mb-2">Inspired by the coast, crafted by hand.</p>
+            <p class="text-sm text-[#FDFBF5]/80">&copy; <span id="currentYear"></span> Copper Coast Ceramics. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="lightboxModal" class="lightbox-modal"> 
+        <div class="lightbox-content">
+            <button id="lightboxCloseButton" class="lightbox-close" aria-label="Close image viewer">&times;</button>
+            <img id="lightboxModalImage" src="" alt="Enlarged ceramic view" class="lightbox-image">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle functionality
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+
+            if (menuButton && mobileMenu && menuIconOpen && menuIconClose) {
+                menuButton.addEventListener('click', () => {
+                    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+                    menuButton.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    menuIconOpen.classList.toggle('hidden');
+                    menuIconClose.classList.toggle('hidden');
+                });
+
+                const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-nav-link-item');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        menuIconOpen.classList.remove('hidden');
+                        menuIconClose.classList.add('hidden');
+                        menuButton.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+            
+            // Set current year in footer
+            const currentYearSpan = document.getElementById('currentYear');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Lightbox Functionality
+            const lightbox = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxModalImage');
+            const closeButton = document.getElementById('lightboxCloseButton');
+            const galleryItemImages = document.querySelectorAll('.gallery-item-custom img');
+
+            if (lightbox && lightboxImg && closeButton && galleryItemImages.length > 0) {
+                galleryItemImages.forEach(image => {
+                    image.addEventListener('click', () => {
+                        lightboxImg.src = image.src; 
+                        lightboxImg.alt = image.alt; 
+                        lightbox.classList.add('is-open'); 
+                        document.body.style.overflow = 'hidden'; 
+                    });
+                });
+
+                function closeLightboxModal() {
+                    lightbox.classList.remove('is-open'); 
+                    document.body.style.overflow = ''; 
+                }
+
+                if(closeButton) {
+                    closeButton.addEventListener('click', closeLightboxModal);
+                }
+
+                if(lightbox) {
+                    lightbox.addEventListener('click', (event) => {
+                        if (event.target === lightbox) { 
+                            closeLightboxModal();
+                        }
+                    });
+                }
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) {
+                        closeLightboxModal();
+                    }
+                });
+            } else {
+                console.warn('Lightbox functionality may be limited as some elements were not found.');
+                if (!lightbox) console.warn(' - Lightbox modal (lightboxModal) not found.');
+                if (!lightboxImg) console.warn(' - Lightbox image (lightboxModalImage) not found.');
+                if (!closeButton) console.warn(' - Lightbox close button (lightboxCloseButton) not found.');
+                if (galleryItemImages.length === 0) console.warn(' - No gallery images (.gallery-item-custom img) found.');
+            }
+        });
+    </script>
+
+</body>
+</html>
