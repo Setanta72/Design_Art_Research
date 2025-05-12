@@ -1,20 +1,17 @@
 ---
 layout: post
-title: Demo for Lisa
-date: 2025-05-08 22:06:29 +0100+0100
-categories:
-  - process
-tags:
-  - personal
-  - blog
-author: Brian P. Casey
-published: true
+title: "2025 05 08 Demo For Lisa"
+date: 2025-05-10 14:52:16 +0100+0100 # Generates date, time, and timezone offset (e.g., +01:00)
+categories: null
+tags: null
+author: "Brian P. Casey" # Or your preferred author name
+published: true # Set to false to keep it as a draft
 ---
 
-## This is a demo for Lisa
-Loads of different things
+## Introduction (Optional Heading)
 
-
+Start your blog post content here...
+<% tp.file.cursor() %>
 
 
 ### Subheading

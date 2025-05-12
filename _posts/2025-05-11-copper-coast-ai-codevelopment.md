@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Untitled
+title: "Workshop Concept: Website Build Exercise"
 date: 2025-05-11 22:18:31 +0100+0100
 categories:
   - AI web-dev
