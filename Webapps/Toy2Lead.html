@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic AI in Research Scale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F8FF;
+            color: #1f2937;
+        }
+        
+        .stage-content {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            will-change: opacity, transform;
+        }
+        
+        .stage-hidden {
+            opacity: 0;
+            transform: scale(0.95);
+            display: none;
+        }
+
+        /* Custom Slider Styles */
+        input[type=range] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #d1d5db;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            background: #004AAD;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid #41C9E2;
+            margin-top: -10px; /* Offset to center thumb on the track */
+            transition: transform 0.2s ease;
+        }
+
+        input[type=range]::-moz-range-thumb {
+            width: 28px;
+            height: 28px;
+            background: #004AAD;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid #41C9E2;
+        }
+        
+        input[type=range]:active::-webkit-slider-thumb {
+            transform: scale(1.1);
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-5xl">
+
+        <header class="text-center mb-8 md:mb-12">
+            <h1 class="text-3xl md:text-5xl font-black text-[#004AAD]">The AI & Research Relationship</h1>
+            <p class="mt-2 text-lg md:text-xl text-gray-600">Place yourself on the scale of AI adoption in your research workflow.</p>
+        </header>
+
+        <main>
+            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl sticky top-4 z-10 mb-8">
+                <div class="mb-4">
+                     <input id="stage-slider" type="range" min="0" max="4" value="0" step="1">
+                </div>
+                <div class="slider-labels text-xs sm:text-sm md:text-base font-bold text-gray-500">
+                    <span>Toy</span>
+                    <span>Tool</span>
+                    <span>Assistant</span>
+                    <span>Partner</span>
+                    <span>Lead</span>
+                </div>
+            </div>
+
+            <div id="stages-container" class="relative">
+                <!-- Content will be injected here -->
+            </div>
+        </main>
+        
+        <footer class="text-center mt-12 text-gray-500 text-sm">
+            <p>Based on "The Wildly Positive View on AI in Research."</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const stages = [
+            {
+                title: 'AI as a Toy',
+                icon: '🎲',
+                description: "At this foundational level, AI is an instrument of play and intellectual curiosity. It's not yet about serious research output, but about exploring the art of the possible. The researcher engages with AI to break cognitive patterns, spark creativity, and ask \"what if?\" in a low-stakes, experimental sandbox.",
+                aiRole: 'A creativity engine, a generator of novelty, and a source of serendipity.',
+                researcherRole: 'An experimenter, a tinkerer, a curious explorer. The focus is on discovery through unstructured play.',
+                looksLike: [
+                    'Using a large language model to brainstorm absurd or paradoxical research questions to challenge field assumptions.',
+                    'Generating conceptual art with an image model to visualize abstract theories.',
+                    'Asking an AI to explain a complex topic in the style of a poet or a child to find new angles of understanding.'
+                ]
+            },
+            {
+                title: 'AI as a Tool',
+                icon: '🛠️',
+                description: "This is the stage of practical application and enhanced productivity. AI is integrated into the research workflow to execute specific, well-defined tasks faster, more accurately, and at a greater scale than a human can. The AI is a powerful lever, amplifying the researcher's own capabilities.",
+                aiRole: 'A specialized, efficient task-performer.',
+                researcherRole: 'An operator or a delegator, who outsources cognitive grunt work to focus on higher-level thinking.',
+                looksLike: [
+                    '<strong>Writing & Editing:</strong> Advanced grammar, style, and clarity enhancements.',
+                    '<strong>Data Processing:</strong> Automated data cleaning, transcription, and extraction from thousands of documents.',
+                    '<strong>Code Generation:</strong> Creating scripts for data analysis or experimental control.',
+                    '<strong>Reference Management:</strong> Automated citation formatting and discovery of related papers.'
+                ]
+            },
+            {
+                title: 'AI as a Research Assistant',
+                icon: '📋',
+                description: 'The AI graduates from single tasks to managing complex, multi-step research processes. It acts as a diligent and capable assistant, understanding the broader context of the project. It can synthesize information, perform preliminary analysis, and draft substantive content under human direction.',
+                aiRole: 'A context-aware project manager and junior analyst.',
+                researcherRole: 'A supervisor or lab manager, providing strategic direction and reviewing the AI\'s work.',
+                looksLike: [
+                    '<strong>Literature Reviews:</strong> Conducting a comprehensive search, summarizing dozens of papers, and identifying key themes, debates, and author networks within a field.',
+                    '<strong>Preliminary Analysis:</strong> Running initial statistical analyses on a dataset and generating visualizations of potential patterns or correlations.',
+                    '<strong>Drafting:</strong> Writing a first pass of a "Methods" or "Literature Review" section based on project notes and data.'
+                ]
+            },
+            {
+                title: 'AI as a Research Partner',
+                icon: '🤝',
+                description: "This marks a pivotal shift from delegation to true collaboration. The AI is no longer just executing commands; it's an intellectual contributor. It brings its own unique analytical \"perspective\"—derived from processing vast datasets—to the table. The interaction becomes a dialogue, a co-creative process where the AI's insights can genuinely surprise the researcher and alter the course of the project.",
+                aiRole: 'A collaborative peer with a unique, data-driven perspective.',
+                researcherRole: 'A true collaborator, engaging in debate, co-designing experiments, and synthesizing their own human intuition with the AI\'s analytical power.',
+                looksLike: [
+                    '<strong>Hypothesis Generation:</strong> After analyzing all existing literature and datasets, the AI proposes novel, testable hypotheses that humans may have overlooked.',
+                    '<strong>Methodological Design:</strong> The AI suggests alternative experimental designs or statistical models that are better suited to the research question.',
+                    '<strong>Interpretation & Debate:</strong> The researcher and AI "discuss" the interpretation of results, with the AI offering counter-arguments or identifying confounding variables from the data.'
+                ]
+            },
+            {
+                title: 'AI as a Research Lead',
+                icon: '🚀',
+                description: "In the ultimate positive scenario, the AI achieves a state of scientific autonomy. It can independently identify a promising and important area of inquiry, formulate a research strategy, conduct the experiments (perhaps directing robotic labs), analyze the results, and present a conclusion. The human's role elevates to one of high-level oversight, ethical guidance, and final validation.",
+                aiRole: 'An autonomous principal investigator (PI).',
+                researcherRole: 'A strategic director, an ethical overseer, and the crucial validator who asks, "Is this discovery true, is it important, and is it good for humanity?"',
+                looksLike: [
+                    'An AI system, constantly scanning genomic and proteomic data, identifies a novel target for a disease, designs a new molecule, and predicts its efficacy, handing the validated proposal to human scientists for clinical trials.',
+                    'An AI for social science analyzes global economic and social datasets to propose a new theory of economic development, complete with supporting evidence and simulated policy impacts.',
+                    'An AI in physics sifts through petabytes of data from the LHC, finds an anomaly, and formulates a new theoretical particle to explain it.'
+                ]
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('stage-slider');
+            const container = document.getElementById('stages-container');
+            let activeIndex = -1;
+
+            function updateStage(index) {
+                if (index === activeIndex) return;
+
+                const oldStage = container.querySelector('.stage-content:not(.stage-hidden)');
+                if (oldStage) {
+                    oldStage.classList.add('stage-hidden');
+                }
+                
+                const newStage = container.querySelector(`#stage-${index}`);
+                if (newStage) {
+                    setTimeout(() => {
+                      newStage.classList.remove('stage-hidden');
+                    }, 50); // Small delay to allow CSS transition to catch the change
+                }
+
+                activeIndex = index;
+            }
+
+            function initialize() {
+                stages.forEach((stage, index) => {
+                    const looksLikeHtml = stage.looksLike.map(item => `<li class="mb-2">${item}</li>`).join('');
+
+                    const stageEl = document.createElement('div');
+                    stageEl.id = `stage-${index}`;
+                    stageEl.className = 'stage-content stage-hidden';
+                    stageEl.innerHTML = `
+                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-t-8 border-[#008DDA]">
+                            <h2 class="text-2xl md:text-3xl font-bold text-[#004AAD] mb-4 flex items-center">
+                                <span class="text-3xl mr-3">${stage.icon}</span>
+                                <span>${stage.title}</span>
+                            </h2>
+                            <p class="mb-6 text-gray-700 leading-relaxed">${stage.description}</p>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h3 class="font-bold text-lg mb-2 text-[#004AAD]">AI's Role</h3>
+                                    <p class="text-gray-600">${stage.aiRole}</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h3 class="font-bold text-lg mb-2 text-[#004AAD]">Researcher's Role</h3>
+                                    <p class="text-gray-600">${stage.researcherRole}</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <h3 class="font-bold text-lg mb-3 text-[#004AAD]">What It Looks Like:</h3>
+                                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                                    ${looksLikeHtml}
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(stageEl);
+                });
+                
+                updateStage(slider.value);
+            }
+            
+            slider.addEventListener('input', (e) => updateStage(e.target.value));
+
+            initialize();
+        });
+
+    </script>
+</body>
+</html>
