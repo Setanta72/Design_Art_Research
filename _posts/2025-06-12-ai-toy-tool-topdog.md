@@ -1,11 +1,16 @@
 ---
 layout: post
-title: "Untitled 1"
-date: 2025-06-12 16:29:36 +0100+0100 # Generates date, time, and timezone offset (e.g., +01:00)
-categories: [reflection,presentation,AI]
-tags: [AIGroup, Presentation]
-author: "Brian P. Casey" # Or your preferred author name
-published: true # Set to false to keep it as a draft
+title: AI in research tool, toy or top dog?
+date: 2025-06-12 16:29:36 +0100+0100
+categories:
+  - reflection
+  - presentation
+  - AI
+tags:
+  - AIGroup
+  - Presentation
+author: Brian P. Casey
+published: true
 ---
 
 ## A naive assessment of how great AI is
