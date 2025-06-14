@@ -22,7 +22,8 @@ The tool presented here was developed by Gemini on my instruction to create a sc
 
 Try out the tool here:
 
-[AI in Research Spectrum]({{ '/Webaps/Toy2Lead.html' | relative_url }})**
+[AI in Research Spectrum]({{ '/Webapps/Toy2Lead.html' | relative_url }})
+
 
 ### The Commentary
 The tool, written by Gemini, follows my basic input to outline the kind of stages of where an AI could be used in interacting with our research. The designations and examples are fairly arbitrary and  illustrative only. The tool only presents a positive view of the possible interaction (as was by brief)
