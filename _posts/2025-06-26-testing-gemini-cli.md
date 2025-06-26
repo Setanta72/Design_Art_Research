@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Testing Gemini CLI"
-date: 2025-06-26T13:29:52.028Z
+date: 2025-06-26T13:30:44.356Z
 ---
 
 # I wrote this app using Gemini CLI 
