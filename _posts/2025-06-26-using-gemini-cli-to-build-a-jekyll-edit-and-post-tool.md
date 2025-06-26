@@ -1,0 +1,39 @@
+---
+layout: post
+title: "Using Gemini CLI to build a Jekyll edit and post tool"
+date: 2025-06-26T16:54:13.336Z
+---
+
+# From Idea to Application: Our Journey Building a Jekyll Post Editor
+Today, **we** successfully built a simple yet effective desktop application using Electron, designed to streamline the process of writing and publishing blog posts to a Jekyll-powered GitHub Pages site. The we here is important as I am using Gemini CLI which is a low cost (or free) version of a console based code editor the same as Claude Code. 
+
+Initial impressions are that its nor quite a slick as Cursor. I have not paid the money to use Claude code which is expensive apparently and this is free. 
+
+I tried it out on an app to make posting to Git pages easier. Seems good as a baseline application and it wrote all the code. It switched from pro to flash mid project but thats as a result of demand I'd imagine. The main glitch was me trying to sort out the ssh keys. 
+## The Core Idea
+The primary goal was to create a cross-platform (Mac and Linux compatible) application that would allow users to:
+Write blog posts in Markdown.
+Automatically generate Jekyll-compliant filenames and front matter.
+Publish posts directly to a Git repository (GitHub Pages) with a single click.
+## Choosing the Right Tools
+We opted for Electron as our framework, leveraging its ability to build desktop applications with familiar web technologies (HTML, CSS, JavaScript). For Git integration, the  library proved invaluable, and  was chosen for Markdown rendering.
+### Navigating the Development Hurdles
+Our development process wasn't without its bumps:
+Initial Setup & Dependencies: We began by initializing a Node.js project and installing Electron
+Git Authentication (SSH): A significant hurdle was encountered with Git authentication. Initially, the application failed to push due to missing SSH keys and the repository being configured for HTTPS. We resolved this by:
+Generating a new SSH key pair on the development machine.
+Adding the public key to GitHub.
+Crucially, changing the local Git repository's remote URL from HTTPS to SSH.
+Markdown Preview Implementation: The request for a live Markdown preview presented an interesting challenge. Our initial approach of using a separate Electron  for the preview was visually incorrect and overly complex. We refactored to integrate the preview directly as a "pane" within the main application window, simplifying the architecture and improving the user experience.
+**Module Resolution with :** A recurring issue was getting the  library to function correctly within the renderer process due to Electron's  security feature. The solution involved importing  in the main process and exposing its functionality to the renderer via  and , ensuring secure and proper module loading.
+**Right-Click Context Menu:** A common Electron issue, the lack of default right-click functionality in text fields, was addressed by implementing a custom context menu in the main process, providing essential editing options like cut, copy, and paste.
+**UI/UX Refinements:** We fine-tuned the application's layout and window sizing to ensure the "Post" button was always visible without scrolling, and configured  to correctly interpret single newlines as line breaks in the preview.
+## The Result
+The outcome is a functional and user-friendly Electron application that simplifies Jekyll blogging. 
+
+Users can now:
+- Enter a post title and write Markdown content.
+- See a live, rendered preview of their Markdown.
+- Click "Create & Post" to automatically generate the Jekyll file, commit it, and push it to their GitHub Pages repository.
+
+This project served as a practical demonstration of Electron's capabilities and the importance of understanding its security model for robust application development.
