@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "First Light: How much can you learn from one blinking red light?"
-date: 2025-01-02
+date: 2026-01-02
 categories: [pi-sandbox, physical-computing]
 ---
 
